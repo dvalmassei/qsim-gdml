@@ -75,6 +75,8 @@ incident particle characteristics to test different configurations and
 experimental expectations. These commands must be passed before a visualization
 macro is used or the initialization command have been passed.
 
+With the implemetation of gdml files the only switches avalilable are the source switches.
+
 *******************
 *** Source mode *** 
 *******************
