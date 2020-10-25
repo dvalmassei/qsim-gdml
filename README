@@ -37,7 +37,7 @@ macros/runexmaple.mac
 
 To run in batch mode, execute with a macro such as:
 
-./qsim runexample.mac
+./qsim gdml_file.gdml runexample.mac
 
 Ensure that all macros include a /run/initialization command or else they will
 not work. 
