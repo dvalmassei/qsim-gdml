@@ -84,6 +84,14 @@ int main(int argc, char** argv){
   
   qsimMessenger *rmmess = new qsimMessenger();
   rmmess->SetIO(io);
+
+  // Detect interactive mode (if only one argument) and define UI session
+  //
+  
+  G4UIExecutive* ui = 0;
+  if ( argc == 2 ) {
+    ui = new G4UIExecutive(argc, argv);
+  }
   
   G4GDMLParser parser;
   parser.Read(argv[1]);
@@ -196,16 +204,30 @@ int main(int argc, char** argv){
 #endif
       //these line will execute a macro without the GUI
       //in GEANT4 a macro is executed when it is passed to the command, /control/execute
-      G4String command = "/control/execute ";
-      G4String fileName = argv[2];
+
+      // Get the pointer to the User Interface manager
+      G4UImanager* UImanager = G4UImanager::GetUIpointer();
       
-      /* Copy contents of macro into buffer to be written out
-       * into ROOT file
-       * */
-      
-      UI->ApplyCommand(command+fileName);
+      // Process macro or start UI session
+      if ( ! ui )   // batch mode  
+	{
+	  G4String command = "/control/execute ";
+	  G4String fileName = argv[2];
+	  
+	  /* Copy contents of macro into buffer to be written out
+	   * into ROOT file
+	   * */
+	  
+	  UI->ApplyCommand(command+fileName);
+	}
+      else           // interactive mode
+	{
+	  UImanager->ApplyCommand("/control/execute vis/vis.mac");     
+	  ui->SessionStart();
+	  delete ui;
+	}
     }
-  
+      
   //if one used the GUI then delete it
 #ifdef G4VIS_USE
   delete visManager;

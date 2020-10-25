@@ -5,6 +5,8 @@
 #
 /vis/scene/create
 
+# Create a scene handler for a specific graphics system
+/vis/open OGL
 
 #
 # Declare that the world volume should be added to the scene
@@ -18,7 +20,7 @@
 
 # Add axis (has to be after /vis/scene/create )
 #
-/vis/scene/add/axes 0 0 0 100 cm
+/vis/scene/add/axes 0 0 0 10 cm
 
 
 #
@@ -36,7 +38,7 @@
 # Set camera
 #
 /vis/viewer/reset
-/vis/viewer/set/viewpointThetaPhi 90 0 deg
+/vis/viewer/set/viewpointThetaPhi 90 90 deg
 /vis/viewer/zoom 1.0
 
 #

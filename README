@@ -48,7 +48,7 @@ Visualization macros are found in vis/
 
 To run, execute
 
-./qsim
+./qsim gdml_file.gdml
 
 which should bring up a graphical command interface
 
