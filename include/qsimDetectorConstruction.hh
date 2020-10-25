@@ -1,4 +1,3 @@
-
 #ifndef qsimDetectorConstruction_h
 #define qsimDetectorConstruction_h 1
 
@@ -31,7 +30,7 @@ class qsimDetectorConstruction : public G4VUserDetectorConstruction
     G4double quartz2_z;
     G4double Wthickness;
 	//G4int fStandMode;
-	G4int fDetMode;
+        G4int fDetMode;
 	G4int fQMode;
 	G4int fStandMode;
 

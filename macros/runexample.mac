@@ -1,15 +1,15 @@
 # Example run macro for qsim
 
 # Set run mode
-/qsim/fDetMode 1 
-/qsim/fStandMode 0 
-/qsim/fSourceMode 2 
+#/qsim/fDetMode 1 
+#/qsim/fStandMode 0 
+/qsim/fSourceMode 1 
 
 # Set detector properties
-/qsim/fQuartzPolish 0.975 
-/qsim/fDetAngle 0 deg
-/qsim/fDetPosX 0 cm
-/qsim/fDetPosY 0 cm
+#/qsim/fQuartzPolish 0.975 
+#/qsim/fDetAngle 0 deg
+#/qsim/fDetPosX 0 cm
+#/qsim/fDetPosY 0 cm
 
 /run/initialize 
 

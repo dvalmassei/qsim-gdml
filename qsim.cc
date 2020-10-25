@@ -86,7 +86,7 @@ int main(int argc, char** argv){
   rmmess->SetIO(io);
   
   G4GDMLParser parser;
-  parser.Read("PREX_SINGLE.gdml");
+  parser.Read(argv[1]);
   
   // Detector geometry
   G4VUserDetectorConstruction* detector = new qsimDetectorConstruction(parser);
@@ -197,7 +197,7 @@ int main(int argc, char** argv){
       //these line will execute a macro without the GUI
       //in GEANT4 a macro is executed when it is passed to the command, /control/execute
       G4String command = "/control/execute ";
-      G4String fileName = argv[1];
+      G4String fileName = argv[2];
       
       /* Copy contents of macro into buffer to be written out
        * into ROOT file
